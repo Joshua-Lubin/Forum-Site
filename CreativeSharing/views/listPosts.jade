@@ -1,0 +1,94 @@
+extends layout
+ 
+block content
+      div(id="pagebody")
+        div(id="latestforumposts")
+          div(id="header") Latest Posts
+          div(class="lposts")
+            - for (var i = 0; i < fivePost.output.l; ++i) {
+            a(class="name" href="/forum/post/" + fivePost.output.content[i].ForumID)=fivePost.output.name[i].name
+            a(class="author" href="/profile/" + fivePost.output.author[i].author)=fivePost.output.author[i].author
+            - }
+        div(id="forumpost")
+            div(class="postname")
+              div(class="n") ABCDEFG
+            div(class="post")
+              div(class="child")
+                  table(class="forumTable")
+                    tr
+                      th
+                        div Programming
+                      th &zwnj;
+                      th &zwnj;
+                      th &zwnj; 
+                    tr
+                      td Image
+                      td Name
+                      td Author
+                      td Date
+                      - for (var i = 0; i < result.output.l; ++i) {
+                          tr
+                            td
+                            td
+                              a(href="/forum/post/" + result.output.content[i].ForumID)=result.output.name[i].name
+                            td
+                              a(href="/profile/" + result.output.author[i].author)=result.output.author[i].author
+                            td
+                              a(href="/forum/post/" + result.output.content[i].ForumID)=result.output.content[i].Date
+                      - }
+                  div(class="list")
+                    - var neg1 = true
+                    - var neg2 = true
+                    - var percentTest = result.output.number%5;
+                    - var part2Number
+                    if (percentTest == 0)
+                      - part2Number = (result.output.number-1) / 5;
+                    else
+                      - part2Number = (result.output.number + (1 - result.output.number % 5)) / 5;
+                    
+                    if (0 < listNumber-1)
+                      - neg1 = false
+                      a(class="next" href="/forum/list/" + (listNumber-1)) Previous
+                    else 
+                      div(class="next" id="disabled") Previous
+                      
+                    if (0 < listNumber-2)
+                      a(class="next" href="/forum/list/" + (listNumber-2))=listNumber-2
+                    else 
+                      div(class="next" id="disabled")=listNumber-2
+                      
+                    if neg1
+                      div(class="next" id="disabled")=listNumber-1
+                    else 
+                      a(class="next" href="/forum/list/" + (listNumber-1))=listNumber-1
+                      
+                      
+                    div(class="next")=listNumber
+                    
+                    
+                    if (part2Number > listNumber)
+                      a(class="next" href="/forum/list/" + (listNumber+1))=listNumber+1
+                    else 
+                      div(class="next" id="disabled")=listNumber+1
+                      - neg2 = false 
+                      
+                    if (part2Number > listNumber+1)
+                      a(class="next" href="/forum/list/" + (listNumber+2))=listNumber+2
+                    else 
+                      div(class="next" id="disabled")=listNumber+2
+                      
+                    if neg2
+                      a(class="next" href="/forum/list/" + (listNumber+1)) Next
+                    else 
+                      div(class="next" id="disabled") Next
+                      
+        div(id="footer")
+              a(href="#") Terms of Use
+              a(href="#") Privacy Policy
+              a(href="#") Contact
+              div 
+              br
+              div Copyright © 2016 Joshua Lubin All Rights Reserved.
+              a(href="#") Buisness
+              a(href="#") Advertisement
+              a(href="#") Ban Removal Service

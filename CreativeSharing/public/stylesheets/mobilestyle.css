@@ -1,0 +1,227 @@
+body {
+  padding: 0;
+  margin: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /*background-image: url("http://cdn6.dottech.org/wp-content/uploads/2013/07/rainbow_over_ocean_wallpaper.jpg?2b1f17");*/
+  background-attachment: fixed;
+  background-position: top;
+  background-size: cover;
+  background-image: url("http://hdwallpapersfit.com/wp-content/uploads/2015/02/lights-keyboard-apple-macbook-pro-hd-wallpapers.jpg");
+  background-repeat: no-repeat;
+}
+#title {
+    position:absolute;
+    width:100%;
+    top: 300px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 10px #ffffff;
+    font-family: poiret one,cursive;
+    font-size: 8.5em;
+    text-shadow: 0 0 5px #000000;
+    animation-name: top;
+    animation-duration: 0.5s;
+}
+.cs {
+  font-family: poiret one;
+}
+#description {
+    font-family: jura,cursive;
+    font-size: 0.65em;
+}
+#navbar {
+  height:175px;
+  width:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  background-color: #43808e;
+  box-shadow: 0 0px 30px #000000;
+  z-index: 11;
+}
+#logo {
+  margin-left: 100px;
+}
+#logo img {
+  margin-top:32.5px;
+  height:100px;
+}
+#menu {
+  position:fixed;
+  right: 70px;
+  top:45px;
+  width:75px;
+  height: 15px;
+  background: white;
+  box-shadow: 0 35px 0 0 white, 0 70px 0 0 white;
+}
+#menuShell {
+  position:fixed;
+  right: 70px;
+  top:45px;
+  width:75px;
+  height: 85px;
+}
+#links {
+  opacity:1;
+  position:fixed;
+  top: -900px;
+  padding-bottom:100px;
+  width:100%;
+  background-color: #0c7b8f;
+  z-index: 10;
+}
+#links:first-child {
+  margin-top:175px;
+}
+#links div {
+  display: block;
+  text-align: center;
+  width:100%;
+  padding-top:50px;
+  padding-bottom:50px;
+  font-size:50px;
+  border-bottom: 2px solid;
+  border-color: #38dfe9;
+}
+#links a div {
+  display: block;
+  text-align: center;
+  width:100%;
+  padding-top:50px;
+  padding-bottom:50px;
+  font-size:50px;
+  border-bottom: 2px solid;
+  border-color: #38dfe9;
+}
+#links a {
+  color: #ffffff;
+  text-decoration: none;
+}
+#links a:visited {
+  color:#ffffff;
+}
+.desc .imageborder img {
+    width:300px;
+    height:300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    animation-name: descimg;
+}
+#img1 {
+  transform: translate(-150px, -430px);
+}
+#img2 {
+  transform: translate(-150px, -450px);
+}
+#img3 {
+  transform: translate(-150px, -405px);
+}
+.desc .divider {
+    width:700px;
+    margin-top: -125px;
+    margin-bottom: -100px;
+}
+.desc div {
+    color:black;
+    font-size: 50px;
+}
+.desc div:nth-child(3) {
+  font-weight: bold;
+  color: #4f4c4c;
+  margin-bottom: 25px;
+}
+.desc {
+    position:relative;
+    display:block;
+    text-align: center;
+    padding:10px;
+    width: auto;
+    vertical-align: top;
+    opacity:1;
+    margin-left: 100px;
+    margin-right:100px;
+    margin-bottom: 50px;
+
+}
+.desc .imageborder {
+    background-color: #D1D1D1;
+    border-radius: 1000px;
+    border: 3.5px solid #6E6E6E;
+    width: 450px;
+    height: 450px;
+    margin: 30px;
+    margin-left:auto;
+    margin-right:auto;
+}
+#descriptions {
+    margin:0;
+    padding:0;
+    position:relative;
+    width:100%;
+    margin-top:700px;
+    border-top-color: #6E6E6E;
+    border-top-width: 1px;
+    border-top-style: solid;
+    text-align: center;
+    background: #FFFFFF;
+    padding-top:100px;
+    padding-bottom:50px;
+}
+#pagebody {
+  margin:0;
+  padding:0;
+  position:relative;
+  width:100%;
+  margin-top:200px;
+  border-top-color: #6E6E6E;
+  border-top-width: 1px;
+  border-top-style: solid;
+  background: #FFFFFF;
+}
+#footer {
+    margin: 0;
+    border-top-color: #6E6E6E;
+    border-top-width: 1px;
+    border-top-style: solid;
+    background-color: #E6E6E6;
+    color: #5E5D5C;
+    display: inline-block;
+    width: 95%;
+    padding: 2.5%;
+    padding-top:75px;
+    padding-bottom:100px;
+    font-size: 50px;
+    float:left;
+    text-align: left;
+}
+#footer div {
+  padding-top:25px;
+  padding-left: 50px;
+  padding-right:50px;
+}
+#footer table {
+  width: 100%;
+}
+#footer table tr td:nth-child(2) a {
+  float:right;
+  margin-right: 50px;
+  margin-left:0;
+}
+#footer div {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#footer a {
+    color: #5E5D5C;
+    margin-left: 5px;
+    margin-right: 5px;
+    float:left;
+    margin-right: 0px;
+    margin-left:50px;
+}
+#footer a:hover {
+    color: #000000;
+}

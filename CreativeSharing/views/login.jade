@@ -1,0 +1,27 @@
+extends layout
+
+block content
+        div(id="pagebody")
+          div(id="regCont")
+            b(id="registerBold") Login
+            form(action='/login' method='post')
+              if user == false | user == NULL
+                input(placeholder="Username" name='username' type='username' class='loginRegisterMenuInput')
+              else
+                input(placeholder=user value=user name='username' type='username' class='loginRegisterMenuInput')
+              br
+              input(placeholder="Password" name='password' type='Password' class='loginRegisterMenuInput')
+              br
+              if isError == true
+                div(class="error") Incorrect username or password.
+              input(type='submit' class='loginRegisterMenuInput')
+          div(id="footer")
+                a(href="#") Terms of Use
+                a(href="#") Privacy Policy
+                a(href="#") Contact
+                div
+                br
+                div Copyright © 2016 Joshua Lubin All Rights Reserved.
+                a(href="#") Buisness
+                a(href="#") Advertisement
+                a(href="#") Ban Removal Service

@@ -1,0 +1,68 @@
+extends layout
+
+block content
+        div(id="pagebody")
+          div(id="regCont")
+            b(id="registerBold") Register
+            form(action='/register' method='post')
+              input(placeholder='Username' name='username' type='username' class='loginRegisterMenuInput' value=user)
+              br
+              if uError.alreadyExists == true
+                div(class="error") That username has already been taken.
+              if uError.uTooShort == true
+                div(class="error") Your username must be at least 3 characters in length. 
+              if uError.uTooLong == true
+                div(class="error") Your username cannot be more that 16 characters in length.
+              if uError.noAlpha == true
+                div(class="error") Your username contains illegal characters.
+              input(placeholder='Email' name='email' type='email' class='loginRegisterMenuInput' value=email)
+              br
+              if eError.eTooShort == true
+                div(class="error") Your email address must be at least 6 characters in length.
+              if eError.alreadyExists == true
+                div(class="error") That email address has already been used.
+              if eError.eTooLong == true
+                div(class="error") Your email address cannot be more than 35 characters in length.
+              if eError.noAlpha == true
+                div(class="error") Your email address contains illegal characters.
+              if eError.isNEmail == true
+                div(class="error") You did not enter a valid email address.
+              input(placeholder='Password' name='password' type='Password' class='loginRegisterMenuInput')
+              br
+              if pError.noAlpha == true
+                div(class="error") Your password contains illegal characters;
+              if pError.pTooShort == true
+                div(class="error") Your password must be at least 8 characters in length.
+              if pError.pTooLong == true
+                div(class="error") Your password cannot be more than 60 characters in length.
+              input(placeholder='Confirm Password' name='cPassword' type='Password' class='loginRegisterMenuInput')
+              br
+              if pError.pNoMatch == true
+                div(class="error") Your passwords do not match.
+              div(id="checksCont")
+                label(class="checks")
+                  input(class="check" name='user13' type='checkbox')
+                  span(class="checkmark")
+                  div(class="agreeText") I am at least 13 years of age
+                br
+                label(class="checks")
+                  input(class="check" name='tos' type='checkbox')
+                  span(class="checkmark")
+                  div(class="agreeText") I agree to the Creative Sharing 
+                    a(href='/tos') Terms of Service
+              if Error13.hasError == true
+                div(class="error") You must be at least 13 years of age to register
+              if tError.hasError == true
+                div(class="error") You must agree to the Creative Sharing Terms of Service in order to use our services
+              br
+              input(type='submit' class='loginRegisterMenuInput')
+          div(id="footer")
+                a(href="#") Terms of Use
+                a(href="#") Privacy Policy
+                a(href="#") Contact
+                div
+                br
+                div Copyright © 2016 Joshua Lubin All Rights Reserved.
+                a(href="#") Buisness
+                a(href="#") Advertisement
+                a(href="#") Ban Removal Service

@@ -1,0 +1,33 @@
+extends layout
+
+block content
+        div(id="pagebody")
+          div(id="regCont")
+            b(id="registerBold") Post
+            form(action='/post' method='post' id="postForm")
+              div(class="custom-select" style="width:44%")
+                select
+                  option(value="0") Post Type
+                  option(value="") Community
+                  option(value="") Programming Community
+                  option(value="") Programming Project
+                  option(value="") Graphic Design Community
+                  option(value="") Graphic Design Project
+              br
+              a(href="/help/forumtypes") What kind of post should I select?
+              br
+              input(placeholder='Title' name='title' type='text' class='loginRegisterMenuInput')
+              br
+              textarea(placeholder='Content' name='content' type='text' class='textarea')
+              br
+              input(type='submit' class='loginRegisterMenuInput')
+          div(id="footer")
+                a(href="#") Terms of Use
+                a(href="#") Privacy Policy
+                a(href="#") Contact
+                div
+                br
+                div Copyright © 2016 Joshua Lubin All Rights Reserved.
+                a(href="#") Buisness
+                a(href="#") Advertisement
+                a(href="#") Ban Removal Service

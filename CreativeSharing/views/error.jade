@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  div(id="pagebody")
+    div(id="err")
+      div(id="errtitle")= errortitle
+      div(id="errmessage")= message
+    div= error.status
+    pre #{error.stack}
+    div(id="footer")
+      a(href="#") Terms of Use
+      a(href="#") Privacy Policy
+      a(href="#") Contact
+      div 
+      br
+      div Copyright © 2016 Joshua Lubin All Rights Reserved.
+      a(href="#") Buisness
+      a(href="#") Advertisement
+      a(href="#") Ban Removal Service

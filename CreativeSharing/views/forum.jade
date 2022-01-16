@@ -1,0 +1,60 @@
+extends layout
+ 
+block content
+      div(id="pagebody")
+        div(id="latestforumposts")
+          div(id="header") Latest Posts
+          div(class="lposts")
+            - for (var i = 0; i < fivePost.output.l; ++i) {
+            a(class="name" href="/forum/post/" + fivePost.output.content[i].ForumID)=fivePost.output.name[i].name
+            a(class="author" href="/profile/" + fivePost.output.author[i].author)=fivePost.output.author[i].author
+            - }
+        div(id="forumpost")
+            //div(id="location") Forums/News
+            div(class="postname")
+              div(class="n")=forumData.name
+            div(class="post")
+              div(class="child" postId=forumData.ForumID)
+                a(class="p" href="/profile/" + forumData.Author)=forumData.Author
+                - if(forumData.views == 1) {
+                div(class="v") 1 View
+                - }
+                - else {
+                div(class="v")=forumData.views + " Views"
+                - }
+                div(class="d")=forumData.Date
+                div(class="postcontent")=forumData.CurrentContent
+                form(method="post" action="/forum/post/" + forumData.ForumID)
+                  textarea(name="comment" class="commentBox" placeholder="Comment")
+                  div(class="expand") ^
+                  input(value="Send" type="submit" class="submitButton" id="commentButton")
+                - for (var b = 0; b < comments.rows.length; ++b) {
+                - if(comments.rows[b].replyto == null) {
+                div(class="comment" commentId=comments.rows[b].CommentID)
+                  div(class="commentAuthor")=comments.rows[b].username
+                  div(class="commentText")=comments.rows[b].Comment
+                  br
+                  div(class="commentReply" href="/test") Reply
+                - }
+                - if(commentsWithReplies.includes(comments.rows[b].CommentID + '')) {
+                  - for (var c = b-1; c > -1; --c) {
+                    - if(comments.rows[b].CommentID == comments.rows[c].replyto) {
+                    div(style="margin-left:50px" class="comment" commentId=comments.rows[c].CommentID)
+                      div(class="commentAuthor")=comments.rows[c].username
+                      div(class="commentText")=comments.rows[c].Comment
+                      br
+                      div(class="commentReply" href="/test") Reply
+                    - }
+                  - }
+                - }}
+                  
+        div(id="footer")
+              a(href="#") Terms of Use
+              a(href="#") Privacy Policy
+              a(href="#") Contact
+              div 
+              br
+              div Copyright © 2016 Joshua Lubin All Rights Reserved.
+              a(href="#") Buisness
+              a(href="#") Advertisement
+              a(href="#") Ban Removal Service

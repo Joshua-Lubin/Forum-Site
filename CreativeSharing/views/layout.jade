@@ -1,0 +1,54 @@
+doctype html
+html
+  head
+    title= title
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")
+    script(src="/javascripts/main.js")
+    link(href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Jura' rel='stylesheet' type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Rajdhani:500,700' rel='stylesheet' type='text/css')
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans:700|Raleway|Didact+Gothic" rel="stylesheet")
+    block links
+  body
+    div(id="blur")
+      div(id="navbar")
+        div(id="desktop")
+          div(id="leftlinks")
+              a(href="/forum" class="link") Forums
+              a(href="/projects" class="link") Feed
+          a(href="/")
+            img(id="logo" src="/images/logo%20creative%20sharing.png")
+          div(id="rightlinkcontainer")
+            div(id="rightlinks")
+                a(href="/feed" class="link") Projects
+                a(href="/store" class="link") Store
+          if userOb == false || userOb == null
+            div(id="loginRegister")
+              div(id="login") Login
+              div(id="register") Register
+          else
+            div(id="userCont")
+              a(id="user" href="/profile/#{ userOb.username }" )
+                div=userOb.username
+              div(id="userDropDown")
+                a(href="/post") Post
+                a(href="/logout") Logout
+        div(id="mobileNav")
+          img(src='/images/menu.svg' id='menuIcon')
+      block content
+    div(id="menu")
+      div(id="menuSecondLayer")
+        div(class="menuTitle") Login
+          div(id="closeMenu") X
+        div(class="menuBody")
+          form(action="/login")
+            input(placeholder="Username" type="Username" class="loginRegisterMenuInput")
+            br
+            input(placeholder="Password" type="Password" class="loginRegisterMenuInput")
+            br
+            input(type="submit" class="loginRegisterMenuInput")
+        div(id="registerMenu")
+  footer
+    block footerLinks

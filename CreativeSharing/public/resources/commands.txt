@@ -1,0 +1,3 @@
+psql
+sudo node bin/www
+postgres -D /Users/joshualubin/Desktop/Programming/Node\ Website/WebsiteDatabase
